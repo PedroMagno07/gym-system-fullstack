@@ -13,27 +13,34 @@ a {
     color: inherit; /* herda a cor original do texto */
 }
 
+/* navbar */
 .head {
-    background-color: rgba(255,255,255,0.02); /* leve destaque sobre o fundo escuro */
-    padding: 15px 30px;
-    box-shadow: 0px 6px 18px rgba(2,6,23,0.6);
+    position: absolute;
+    height: 97px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background: #0E1111;
+    box-shadow: 1px 10px 40px rgba(168, 162, 162, 0.25);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
+    z-index: 100;
 }
 
 /* LOGO */
 .logo {
-    max-width: 200px;
-    height: auto;
+    width: 240px;
+    height: 240px;
     cursor: pointer;
+    object-fit: contain;
 }
 
-/* Menu superior direito - botão de login */
+/* Botão de login */
 .btlogin {
-    border-radius: 10px;
-    width: 115px;
-    height: 30px;
+    border-radius: 12px;
+    width: 150px;
+    height: 50px;
     font-size: 18px;
     font-weight: bold;
     background-color: rgba(159, 58, 190, 0.767);
@@ -42,13 +49,9 @@ a {
     margin-left: auto;
 }
 
-.btlogin:hover {
-    cursor: pointer;
-}
-
 /* Caixa pai com os planos */
 .bxsplans {
-    margin-top: 80px;
+    margin-top: 150px;
     display: flex;
     justify-content: center;
     gap: 20px;
