@@ -1,0 +1,173 @@
+body {
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 10px 6px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+}
+
+.profile {
+  flex: 1 1 auto; /* Faz a profile ocupar o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+.userplan {
+  font-size: 16px;
+  color: gold;
+  margin-top: 10px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fa-medal {
+  color: gold;
+  margin-right: 5px;
+}
+
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid gold;
+}
+
+.profilenums {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.profileinfo {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.profilenums p,
+.profileinfo p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+}
+
+.history {
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.historybx {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  width: 300px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 15px;
+  padding: 10px 0; /* Espaço interno opcional */
+  gap: 60px;
+  font-size: 25px;
+}
+
+/* Botão de tema */
+.menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Tema escuro */
+body.dark {
+  background-color: #181818;
+  color: #fff;
+}
+
+body.dark .left,
+body.dark .profile {
+  background-color: #232323;
+  color: #fff;
+  box-shadow: 10px 6px 5px rgba(56, 56, 56, 0.3);
+}
+
+body.dark .historybx {
+  background-color: #d4d4d4;
+  color: #333;
+  border-radius: 20px;
+}
+
+body.dark .menu {
+  background-color: #222;
+}
+
+body.dark .username,
+body.dark .profileinfo p,
+body.dark .profilenums p {
+  color: #fff;
+}
+
+body.dark .userplan {
+  color: #ffd700;
+}
+
+body.dark .fa-medal {
+  color: #ffd700;
+}
+
+/* Ajuste para tema claro */
+.username,
+.profileinfo p,
+.profilenums p {
+  color: #222;
+}
