@@ -1,0 +1,126 @@
+/* --- RESET E ESTILOS GERAIS --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  overflow-x: hidden; /* Garante que não haja rolagem horizontal indesejada */
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+nav {
+  /* Adaptação de Rectangle 12 e Group 2 do design original */
+  position: fixed; /* Fixa a barra no topo da tela */
+  width: 100%;
+  height: 97px; /* Altura do design original */
+  background: #0e1111; /* Cor de fundo escura do design */
+  box-shadow: 1px 10px 40px rgba(168, 162, 162, 0.25); /* Sombra do design */
+  z-index: 20; /* Garante que a nav fique acima do conteúdo */
+
+  /* Estilos do seu CSS base */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* --- LOGO (ESTILIZADA COMO IMAGEM, MAS É TEXTO) --- */
+
+.logo {
+  color: #fff;
+  font-size: 54px;
+  font-weight: bold; /* Adicionado para dar mais destaque, opcional */
+  line-height: 54px; /* Centraliza verticalmente o texto dentro da altura */
+  text-align: center;
+}
+
+/* --- MOBILE MENU (ÍCONE SANDUÍCHE) --- */
+
+.mobile-menu {
+  display: block; /* O ícone SEMPRE aparece (padrão mobile-first) */
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  /* Estilização das linhas (Rectangle 14, 16, 17) */
+  width: 32px;
+  height: 2px;
+  background: #d9d9d9; /* Cor das linhas do design */
+  margin: 8px 0; /* Espaçamento entre as linhas */
+  transition: 0.3s;
+}
+
+/* --- NAV LIST (MENU LATERAL) --- */
+
+.nav-list {
+  list-style: none;
+
+  /* Configuração para o menu lateral retrátil */
+  position: fixed;
+  top: 97px; /* Começa logo abaixo da barra de navegação (97px de altura) */
+  right: 0;
+  width: 300px; /* Largura fixa para o menu */
+  height: calc(100vh - 97px); /* Ocupa o restante da tela */
+  background: #0e1111; /* Cor de fundo igual a da nav para consistência */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  /* Configuração de animação */
+  transform: translateX(100%); /* ESCONDIDO: Coloca o menu fora da tela */
+  transition: transform 0.3s ease-in;
+  z-index: 10;
+
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 0;
+  opacity: 0; /* Links invisíveis para a animação */
+}
+
+/* --- ESTADOS ATIVOS (APLICADOS PELO JAVASCRIPT) --- */
+
+/* 1. MOSTRA a lista de links ao ser clicado */
+.nav-list.active {
+  transform: translateX(0); /* MOSTRA: Traz o menu para dentro da tela */
+}
+
+/* 2. Animação de entrada dos links */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 3. Animação do ícone sanduíche para "X" */
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
