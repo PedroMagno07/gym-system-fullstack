@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Progress</title>
+    <link rel="stylesheet" href="Training.css">
+</head>
+<body>
+    
+    <div class="header-progresso">
+        <h2>TRAINING PROGRESS</h2>
+    </div>
+
+    <div class="titulo-dia">
+        <h3>SEGUNDA-FEIRA</h3>
+    </div>
+
+    <main class="container-principal-treino">
+        
+        <section class="coluna-esquerda">
+            
+            <div class="titulo-musculo">
+                <h4>PEITORAL</h4>
+            </div>
+            
+            <div class="lista-de-exercicios">
+                
+                <div class="card-exercicio">
+                    <input type="checkbox" id="ex1">
+                    <label for="ex1">
+                        <h3>Supino Reto</h3>
+                        <span class="detalhe-treino">4 séries de 10 repetições</span>
+                        <span class="detalhe-treino">Descanso: 60 seg</span>
+                    </label>
+                </div>
+
+                <div class="card-exercicio">
+                    <input type="checkbox" id="ex2">
+                    <label for="ex2">
+                        <h3>Supino Inclinado</h3>
+                        <span class="detalhe-treino">4 séries de 10 repetições</span>
+                        <span class="detalhe-treino">Descanso: 60 seg</span>
+                    </label>
+                </div>
+
+                <div class="card-exercicio">
+                    <input type="checkbox" id="ex3">
+                    <label for="ex3">
+                        <h3>Crucifixo Inclinado</h3>
+                        <span class="detalhe-treino">4 séries de 10 repetições</span>
+                        <span class="detalhe-treino">Descanso: 60 seg</span>
+                    </label>
+                </div>
+
+                <div class="card-exercicio">
+                    <input type="checkbox" id="ex4">
+                    <label for="ex4">
+                        <h3>Crossover</h3>
+                        <span class="detalhe-treino">4 séries de 10 repetições</span>
+                        <span class="detalhe-treino">Descanso: 60 seg</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        
+        <section class="coluna-direita">
+            
+            <div class="titulo-musculo">
+                <h4>PROGRESSO</h4>
+            </div>
+            <div class="container-de-progresso">
+
+    <div class="progresso-header">
+        <label for="progresso-dia">DIÁRIO</label>
+        <span id="porcentagem-dia">0%</span>
+    </div>
+    <progress id="progresso-dia" max="100" value="0"></progress>
+    
+    <div class="progresso-header">
+        <label for="progresso-semana">SEMANAL</label>
+        <span id="porcentagem-semana">0%</span>
+    </div>
+    <progress id="progresso-semana" max="100" value="40"></progress>
+
+</div>
+
+            <button type="button" id="btn-finalizar">FINALIZAR</button>
+            
+        </section>
+    
+    </main> <div id="modal-anotacao" class="modal-escondido">
+        <div class="modal-conteudo">
+            <h2>Parabéns, Treino Concluído!</h2>
+            <p>Deixe suas anotações sobre o treino (cargas, dificuldades, etc.)</p>
+            
+            <textarea id="anotacoes-treino" rows="6" placeholder="Ex: Supino 50kg (fácil), Tríceps 20kg (difícil)..."></textarea>
+            
+            <button type="button" id="btn-salvar-anotacao">Salvar e Fechar</button>
+        </div>
+    </div>
+
+    <a href="index.html">Voltar para a Página Inicial</a>
+
+    <script src="Training.js"></script>
+    
+</body>
+</html>
