@@ -1,0 +1,157 @@
+/* Importação da fonte (Se não estiver no head do HTML) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* Reset Básico e Fundo da Página */
+body {
+  background-color: #0e1111; /* Fundo preto */
+}
+
+/* --- Conteúdo Principal (Centralizado) --- */
+.content-container {
+  flex-grow: 1; /* Faz com que ocupe todo o espaço vertical disponível */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center;
+  padding-top: 120px; /* Padding para telas menores */
+}
+
+.access-denied {
+  max-width: 1200px; /* Limite de largura para o conteúdo */
+  width: 100%;
+  padding-bottom: 150px; /* Espaço para não colidir com o footer */
+}
+
+/* Título 'OPS!!!' */
+.heading-ops {
+  color: #ffffff; /* AGORA O TÍTULO INTEIRO É BRANCO POR PADRÃO */
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+/* NOVO: Classe para destacar o "OPS!!!" */
+.ops-highlight {
+  color: #8f17be; /* Apenas o "OPS!!!" fica roxo */
+  margin-right: 15px; /* Adiciona um pequeno espaço após o "OPS!!!" */
+}
+
+/* Texto de Instrução */
+/* ... (regras anteriores para OPS!!!) ... */
+
+/* Estilo geral do parágrafo */
+/* ... (regras anteriores para OPS!!!) ... */
+
+/* Estilo geral do parágrafo - Agora define o tamanho GRANDE da primeira linha */
+.text-instruction {
+  /* Define o tamanho GRANDE */
+  font-size: clamp(30px, 5vw, 60px);
+
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+/* NOVO: Classe para a segunda linha (Menor) */
+.instruction-smaller {
+  /* Define o tamanho MENOR */
+  font-size: clamp(20px, 3.5vw, 40px);
+
+  /* O display inline-block ajuda a manter o alinhamento e respeitar o tamanho */
+  display: inline-block;
+
+  /* Garante que a cor seja branca, se o P tiver outra cor */
+  color: #ffffff;
+
+  /* Opcional: Adiciona margem acima, se o <br> não for suficiente */
+  margin-top: 10px;
+}
+
+/* Mantém o destaque roxo na palavra 'Tech' */
+.text-tech {
+  color: #8f17be;
+}
+/* ... (o restante do seu style.css) ... */
+/* ... (o restante do seu style.css) ... */
+
+/* Logo de Texto "Debug{Fit}" */
+.logo-text {
+  font-weight: 700;
+  font-size: clamp(60px, 10vw, 150px);
+  line-height: 1.2;
+  color: #ffffff; /* AGORA É BRANCO */
+  margin-bottom: 20px;
+}
+
+/* NOVO: Classe para destacar o "Fit" */
+.fit-highlight {
+  color: #8f17be; /* O "Fit" fica roxo */
+}
+
+/* Slogan - Cor base alterada para branco */
+.text-slogan {
+  color: white;
+  font-weight: 700;
+  /* AUMENTADO: O slogan agora é o texto 'maior' */
+  font-size: clamp(30px, 4.5vw, 60px);
+  line-height: 1.5;
+  margin-bottom: 50px;
+  /* O slogan não precisa de cor padrão aqui, pois todos os textos têm classes */
+}
+
+/* NOVO: Classe para destacar "Fortaleça" e "Otimize" */
+.slogan-highlight {
+  color: #8f17be; /* "Fortaleça" e "Otimize" ficam roxos */
+}
+
+/* --- Rodapé (Footer de Contato) --- */
+.contact-footer {
+  position: fixed; /* Fixa no final da tela */
+  bottom: 0;
+  width: 100%;
+  background: transparent; /* Fundo transparente como na imagem */
+  padding: 30px 0;
+  display: flex;
+  justify-content: center; /* Centraliza os itens de contato */
+  flex-wrap: wrap; /* Permite quebras de linha em telas pequenas */
+  gap: 40px; /* Espaçamento entre os itens */
+}
+
+.contact-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.contact-item:hover {
+  color: #8f17be; /* Efeito hover */
+}
+
+.contact-item .icon {
+  /* Estilização para os ícones (como os emojis que usei no HTML) */
+  color: #8f17be; /* Cor roxa para o ícone */
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+/* Mídia Query: Ajuste fino para telas menores */
+@media (max-width: 768px) {
+  .contact-footer {
+    flex-direction: column; /* Empilha os contatos em telas pequenas */
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  /* Reduz o padding inferior para otimizar espaço em dispositivos móveis */
+  .access-denied {
+    padding-bottom: 100px;
+  }
+}
