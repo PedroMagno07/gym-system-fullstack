@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // É ALUNO. Vamos verificar se tem plano.
             if (empty($usuario_db['plano_id'])) {
                 // SEM PLANO: Redireciona para a tela de escolha de planos
-                header("Location: ../../frontend/escolher-plano/index.html");
+                header("Location: ../../frontend/aluno \ dashboard/index.html");
             } else {
                 // COM PLANO: Vai para o dashboard normal
                 header("Location: ../../frontend/dashboard-aluno/index.html");
