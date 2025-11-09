@@ -47,8 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         exit;
     } else {
-        echo "<script>alert('Usuário ou senha incorretos!'); window.history.back();</script>";
-        exit;
-    }
+    // FORÇA o tipo de conteúdo para HTML, anulando o que o db.php definiu
+    header('Content-Type: text/html; charset=utf-8');
+    
+    echo "<script>alert('Usuário ou senha incorretos!'); window.history.back();</script>";
+    exit;
+}
 }
 ?>
