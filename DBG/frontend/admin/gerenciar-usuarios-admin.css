@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #363636;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  height: 97px;
+  background: #fff;
+  box-shadow: 1px 10px 40px rgba(168, 162, 162, 0.25);
+  display: flex;
+  justify-content: flex-start; /* keep items at start so logo stays left */
+  align-items: center;
+  padding: 0 20px;
+}
+
+.menu-icon {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22px;
+}
+
+.logo{
+  margin-left:20px;
+}
+
+.menu-icon{ margin-left:auto; }
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #363636;
+}
+
+
+
+/* ===== SEARCH SECTION ===== */
+.search-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.search-section h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #423E3E;
+}
+
+.search-section h1 span {
+  color: #8F17BE;
+}
+
+.search-box {
+  margin: 20px auto;
+  width: 500px;
+  background: #fff;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+  .logo{
+    height:50px;
+    width:auto;
+    margin-left:16px;
+    color: #6E6E6E;
+    margin-right: 10px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: #6E6E6E;
+  width: 100%;
+}
+
+/* ===== USER TABLE ===== */
+.user-table {
+  background: #D9D9D9;
+  margin: 40px auto;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 1800px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.table-header p:first-child {
+  text-align: left;
+  padding-left: 220px;
+}
+
+.user-card {
+  display: grid;
+  grid-template-columns: 200px 2.3fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  background: #D9D9D9;
+  border-radius: 12px;
+}
+
+.avatar {
+  width: 175px;
+  height: 175px;
+  background: #8F17BE;
+  border-radius: 50%;
+  justify-self: center;
+}
+
+.user-info {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.user-info h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.user-info p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-type,
+.user-plan,
+.user-config {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.user-config i {
+  font-size: 48px;
+  color: #8F17BE;
+}
