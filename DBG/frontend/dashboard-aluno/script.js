@@ -1,4 +1,4 @@
-/// --- CLASSE ORIGINAL DA NAVBAR (Mantida) ---
+// --- CLASSE ORIGINAL DA NAVBAR (Mantida) ---
 class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
