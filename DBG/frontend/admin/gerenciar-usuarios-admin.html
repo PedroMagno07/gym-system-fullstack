@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gerenciar Usuarios</title>
-  <link rel="stylesheet" href="gerenciar-usuarios-admin.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciar Usuários</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome (versão CDN sem CORS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilo local -->
+  <link rel="stylesheet" href="gerenciar-usuarios-admin.css">
+
+  <!-- Script principal -->
+  <script src="gerenciar-usuarios-admin.js" defer></script>
 </head>
 <body>
   <header class="navbar">
@@ -29,49 +36,11 @@
       </div>
     </section>
 
-    <section class="user-table">
-      <div class="table-header">
-        <p>Nome do Usuário</p>
-        <p>Tipo de Usuário</p>
-        <p>Plano</p>
-        <p>Configurações</p>
-      </div>
+    <div class="user-table">
 
-      <div class="user-card">
-        <div class="avatar"></div>
-        <div class="user-info">
-          <h2>Username</h2>
-          <p>useremail@gmail.com</p>
-        </div>
-        <div class="user-type">Aluno</div>
-        <div class="user-plan">Pleno</div>
-        <div class="user-config"><i class="fa-solid fa-user-gear"></i></div>
-      </div>
+    </div>
 
-      <div class="user-card">
-        <div class="avatar"></div>
-        <div class="user-info">
-          <h2>Username</h2>
-          <p>useremail@gmail.com</p>
-        </div>
-        <div class="user-type">Professor</div>
-        <div class="user-plan">Pleno</div>
-        <div class="user-config"><i class="fa-solid fa-user-gear"></i></div>
-      </div>
-
-      <div class="user-card">
-        <div class="avatar"></div>
-        <div class="user-info">
-          <h2>Username</h2>
-          <p>useremail@gmail.com</p>
-        </div>
-        <div class="user-type">Aluno</div>
-        <div class="user-plan">Sênior</div>
-        <div class="user-config"><i class="fa-solid fa-user-gear"></i></div>
-      </div>
-    </section>
   </main>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

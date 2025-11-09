@@ -175,3 +175,60 @@ body {
     margin: 0 auto;
   }
 }
+
+/* ===== VALOR ATUAL ===== */
+.plano-valor-container {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.valor-atual {
+  font-size: 22px;
+  font-weight: 700;
+  color: #8F17BE;
+  margin-bottom: 10px;
+}
+
+/* ===== BOTÃO DE SALVAR ===== */
+.btn-salvar {
+  background: #8F17BE;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 25px;
+}
+
+.btn-salvar:hover {
+  background: #6e13a0;
+}
+
+.btn-salvar i {
+  margin-right: 8px;
+}
+
+textarea.descricao {
+  width: 100%;
+  min-height: 120px;
+  border: none;
+  border-radius: 8px;
+  background: #e7e7e7;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  resize: vertical;
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+textarea.descricao:focus {
+  box-shadow: 0 0 0 2px #8f17be;
+  background: #fff;
+}

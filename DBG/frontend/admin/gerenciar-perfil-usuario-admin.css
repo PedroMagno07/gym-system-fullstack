@@ -119,3 +119,18 @@ body {
 .ban-icon:hover {
     cursor: pointer;
 }
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #7b2ff7;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.avatar:hover {
+  opacity: 0.8;
+}
