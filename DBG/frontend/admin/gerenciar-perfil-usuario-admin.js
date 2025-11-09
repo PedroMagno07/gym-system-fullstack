@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // Requisição ao backend
-    const resp = await fetch(`http://localhost/DBG/api/obter_usuario.php?id=${id}`);
+    const resp = await fetch(`http://localhost/DBG/backend/admin/obter_usuario.php?id=${id}`);
     const text = await resp.text();
     console.log("Resposta bruta do PHP:", text);
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       formData.append("foto", file);
 
       try {
-        const uploadResp = await fetch("http://localhost/DBG/api/atualizar_usuario.php", {
+        const uploadResp = await fetch("http://localhost/DBG/backend/admin/atualizar_usuario.php", {
           method: "POST",
           body: formData,
         });

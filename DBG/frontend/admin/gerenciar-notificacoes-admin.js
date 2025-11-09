@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lista.innerHTML = "<p style='text-align:center;'>Carregando...</p>";
 
     try {
-      const resp = await fetch("http://localhost/DBG/api/listar.php");
+      const resp = await fetch("http://localhost/DBG/backend/admin/listar_notificacoes.php");
       const dados = await resp.json();
 
       if (!dados.length) {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const id = btn.dataset.id;
           if (!confirm("Deseja excluir esta notificação?")) return;
 
-          const resp = await fetch("http://localhost/DBG/api/excluir.php", {
+          const resp = await fetch("http://localhost/DBG/backend/admin/excluir_notificacoes.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id })
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const resp = await fetch("http://localhost/DBG/api/criar.php", {
+    const resp = await fetch("http://localhost/DBG/backend/admin/criar_notificacao.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados)

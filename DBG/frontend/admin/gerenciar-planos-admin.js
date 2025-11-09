@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function carregarPlanos() {
     try {
-      const resp = await fetch("http://localhost/DBG/api/listar_planos.php");
+      const resp = await fetch("http://localhost/DBG/backend/admin/listar_planos.php");
       const planos = await resp.json();
 
       // Renderiza apenas os três planos principais
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           formData.append("descricao", novaDescricao);
 
           try {
-            const resp = await fetch("http://localhost/DBG/api/atualizar_plano.php", {
+            const resp = await fetch("http://localhost/DBG/backend/admin/atualizar_plano.php", {
               method: "POST",
               body: formData
             });
