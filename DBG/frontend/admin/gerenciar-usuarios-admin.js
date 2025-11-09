@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Função principal: carrega e renderiza usuários
   async function carregarUsuarios(filtro = "") {
     try {
-      const resp = await fetch("http://localhost/DBG/api/listar_usuarios.php");
+      const resp = await fetch("http://localhost/DBG/backend/admin/listar_usuarios.php");
       const dados = await resp.json();
 
       console.log("Usuários recebidos:", dados);
