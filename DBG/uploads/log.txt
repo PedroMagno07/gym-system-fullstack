@@ -1,0 +1,13 @@
+Array
+(
+    [foto] => Array
+        (
+            [name] => userphoto.webp
+            [full_path] => userphoto.webp
+            [type] => image/webp
+            [tmp_name] => C:\xampp\tmp\php8BC0.tmp
+            [error] => 0
+            [size] => 1798
+        )
+
+)

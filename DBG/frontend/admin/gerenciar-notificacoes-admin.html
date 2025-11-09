@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="gerenciar-notificacoes-admin.css">
+  <script src="gerenciar-notificacoes-admin.js"></script>
+
 </head>
 <body>
   <!-- NAVBAR -->
@@ -32,51 +34,32 @@
         <p>Excluir</p>
       </div>
 
-      <div class="notificacoes-list">
-        <div class="notificacao">
-          <p>AVISO!!!</p>
-          <p>00/00/2000</p>
-          <p>Aluno</p>
-          <button><i class="fa-solid fa-trash"></i></button>
-        </div>
-        <div class="notificacao">
-          <p>CORDENAÇÃO</p>
-          <p>00/00/2000</p>
-          <p>Aluno</p>
-          <button><i class="fa-solid fa-trash"></i></button>
-        </div>
-        <div class="notificacao">
-          <p>RECEPÇÃO</p>
-          <p>00/00/2000</p>
-          <p>Aluno</p>
-          <button><i class="fa-solid fa-trash"></i></button>
-        </div>
-        <div class="notificacao">
-          <p>ALERTA!</p>
-          <p>00/00/2000</p>
-          <p>Aluno</p>
-          <button><i class="fa-solid fa-trash"></i></button>
+      <div class="notificacoes-list" id="listaNotificacoes">
+
         </div>
       </div>
     </section>
 
-    <!-- CRIAR NOTIFICAÇÃO -->
-    <section class="criar-notificacao">
-      <h1>Criar <span>{ Notificação }</span></h1>
+<!-- CRIAR NOTIFICAÇÃO -->
+<section class="criar-notificacao">
+  <h1>Criar <span>{ Notificação }</span></h1>
 
-      <label for="titulo">Título</label>
-      <input type="text" id="titulo" >
+  <form id="formNotificacao">
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" placeholder="Título" required>
 
-      <label for="destinatarios">Destinatários</label>
-      <input type="text" id="destinatarios" >
+    <label for="destinatarios">Destinatários</label>
+    <input type="text" id="destinatarios" placeholder="Destinatários" required>
 
-      <label for="conteudo">Conteúdo</label>
-      <textarea id="conteudo" rows="8"></textarea>
+    <label for="conteudo">Conteúdo</label>
+    <textarea id="conteudo" placeholder="Conteúdo" rows="8" required></textarea>
 
-      <button class="enviar">
-        <i class="fa-solid fa-paper-plane"></i>
-      </button>
-    </section>
+    <button type="submit" class="enviar">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
+  </form>
+</section>
+
   </main>
 </body>
 </html>
