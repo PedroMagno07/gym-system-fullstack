@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Fit - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="../../images/logo.png" alt="Debug Fit Logo" class="logo-img">
+        </div>
+    </header>
+
+    <main class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <h2>Gerenciar</h2>
+                <button class="menu-btn">
+                    <span class="icon">🔔</span> Notificações
+                </button>
+                <button class="menu-btn">
+                    <span class="icon">📋</span> Planos
+                </button>
+                <button class="menu-btn">
+                    <span class="icon">👥</span> Usuários
+                </button>
+            </div>
+
+            <div class="back-container" onclick="alert('Voltando para Home...')">
+                <div class="back-circle">
+                    ➜
+                </div>
+                <span>Voltar</span>
+            </div>
+        </aside>
+
+        <section class="content">
+            <h2>Estatísticas</h2>
+            
+            <div class="chart-wrapper">
+                <canvas id="dashboardChart"></canvas>
+            </div>
+
+            <div class="toggle-tabs">
+                <button class="tab-btn active" data-type="planos">PLANOS</button>
+                <button class="tab-btn" data-type="usuarios">USUÁRIOS</button>
+                <button class="tab-btn" data-type="receita">RECEITA</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

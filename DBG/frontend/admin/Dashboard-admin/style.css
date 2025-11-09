@@ -1,0 +1,164 @@
+:root {
+    --purple-primary: #9D35E7; /* Cor roxa aproximada da imagem */
+    --dark-btn: #1A1A1A;
+    --bg-main: #F5F5F5;      /* Fundo geral claro */
+    --bg-container: #E0E0E0; /* Fundo dos containers cinza */
+    --text-primary: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header --- */
+.header {
+    background-color: #000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    max-height: 40px; /* Ajuste conforme sua logo */
+    width: auto;
+}
+
+/* --- Layout --- */
+.main-container {
+    flex: 1;
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    height: calc(100vh - 60px); /* Altura total menos o header */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    background-color: var(--bg-container);
+    width: 260px;
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.sidebar-menu {
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-menu h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50px; /* Bordas bem arredondadas */
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.back-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.back-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    transform: rotate(180deg); /* Para a seta apontar para a esquerda se usar caractere padrão */
+}
+
+/* --- Content Area --- */
+.content {
+    flex: 1;
+    background-color: var(--bg-container);
+    border-radius: 15px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.chart-wrapper {
+    flex: 1;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* --- Toggle Tabs --- */
+.toggle-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tab-btn {
+    padding: 12px 35px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: var(--dark-btn);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: var(--purple-primary);
+    box-shadow: 0 0 15px rgba(157, 53, 231, 0.4);
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #333;
+}
