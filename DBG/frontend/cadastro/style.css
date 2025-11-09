@@ -1,0 +1,151 @@
+ :root {
+            --cor-roxo-marca: #8F17BE;
+            --cor-fundo-preto: #0E1111;
+            --cor-cinza-input: #D9D9D9;
+            --cor-branco: #FFFFFF;
+            --largura-comum: 350px; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-fundo-preto);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--cor-branco);
+            overflow: hidden;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 600px; /* Levemente maior para acomodar chaves maiores se necessário */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .logo {
+            max-width: 300px;
+            margin-bottom: 30px; /* Reduzi um pouco a margem para caber tudo na tela sem rolar */
+        }
+
+        .braced-inputs-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .brace {
+            /* AUMENTADO: Para cobrir os 3 inputs */
+            font-size: 260px; 
+            color: var(--cor-roxo-marca);
+            font-weight: 300;
+            line-height: 0;
+            margin-top: -15px; /* Ajuste fino vertical para centralizar com 3 inputs */
+            user-select: none;
+            flex-shrink: 0;
+        }
+
+        .inputs-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: var(--largura-comum);
+            max-width: 100%;
+            margin-top: -20px;
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #555;
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px 15px 15px 55px;
+            border: none;
+            border-radius: 50px;
+            background-color: var(--cor-cinza-input);
+            font-size: 1.1rem;
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            box-shadow: 0 0 0 4px rgba(143, 23, 190, 0.3);
+            background-color: var(--cor-branco);
+        }
+
+        .btn-login {
+            width: var(--largura-comum);
+            max-width: 90%;
+            padding: 15px;
+            margin-top: 25px;
+            background-color: var(--cor-roxo-marca);
+            color: var(--cor-branco);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(143, 23, 190, 0.4);
+        }
+
+        .btn-login:hover {
+            filter: brightness(1.2);
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(143, 23, 190, 0.6);
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .footer-text a {
+            color: var(--cor-roxo-marca);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .footer-text a:hover {
+            filter: brightness(1.2);
+            text-shadow: 0 0 8px rgba(143, 23, 190, 0.8);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
