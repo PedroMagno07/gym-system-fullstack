@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: application/json');
-require 'conexao.php'; 
+// CORREÇÃO: db.php está um nível acima
+require '../db.php'; 
 
 $response = [
     'planos' => [],

@@ -67,13 +67,12 @@ async function marcarComoLida(id, itemElement) {
     itemElement.classList.remove('unread');
     
     try {
-        await fetch('marcar_lida.php', {
+        // CORREÇÃO: Nome do arquivo ajustado para API_Marcar_como_Lida.php
+        await fetch('../../../backend/API/API_Marcar_como_Lida.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: id })
         });
-        // Não precisa fazer nada com a resposta,
-        // a menos que queira tratar um erro
     } catch (error) {
         console.error("Erro ao marcar notificação como lida:", error);
         // Se der erro, readiciona a classe (opcional)
@@ -114,11 +113,13 @@ async function carregarNotificacoes() {
     if (!lista) return;
 
     try {
-        const response = await fetch('../../backend/API/obter_minhas_notificacoes.php');
+        // Caminho já estava correto
+        const response = await fetch('../../../backend/API/obter_minhas_notificacoes.php');
         
         if (response.status === 401) {
             alert("Sessão expirada. Faça login novamente.");
-            window.location.href = '/login.html'; // Ajuste para sua página de login
+            // CORREÇÃO: Caminho para login saindo de Dashboard-aluno
+            window.location.href = '../../login/index.html'; 
             return;
         }
         
@@ -160,7 +161,6 @@ async function carregarNotificacoes() {
             });
 
             // 3. Cria o conteúdo interno (baseado no seu HTML)
-            // O ícone do sino está fixo, mas você pode mudar isso
             li.innerHTML = `
                 <div class="status-indicator"></div>
                 <div class="notification-card" 

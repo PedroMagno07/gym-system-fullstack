@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'db.php';
+// CORREÇÃO: db.php está um nível acima
+include '../db.php';
 
 // Pega o JSON enviado (ex: {"id": 123})
 $data = json_input();

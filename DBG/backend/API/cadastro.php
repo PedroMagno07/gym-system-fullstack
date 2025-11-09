@@ -1,5 +1,6 @@
 <?php
-require '../conexao.php';
+// CORREÇÃO: Nome do arquivo é db.php, não conexao.php
+require '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = $_POST['usuario'];
@@ -33,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt_aluno = $pdo->prepare("INSERT INTO Alunos (aluno_id) VALUES (?)");
         $stmt_aluno->execute([$novo_usuario_id]);
 
-        // Redireciona para o login
+        // Redireciona para o login (Caminho já estava correto: sobe API, sobe backend, entra frontend/login)
         header("Location: ../../frontend/login/index.html");
         exit;
     } catch (Exception $e) {
