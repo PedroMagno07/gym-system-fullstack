@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
 body {
   background-color: #0e1111;
 }
 
+/* REGRAS DO LAYOUT EXTERNO (MANTIDAS) */
 .meusAlunos {
   display: flex;
   justify-content: center;
@@ -27,6 +29,7 @@ body {
 .meusAlunos .alunos-roxo {
   color: #8a2be2;
 }
+
 .cards-layout-container {
   display: grid;
   grid-template-columns: repeat(4, 341.51px);
@@ -37,17 +40,24 @@ body {
   transform: translateX(-50%);
   top: 260px;
 }
+
+/* REGRAS DO CARD (AJUSTADAS PARA LAYOUT INTERNO FLUÍDO) */
 .card-aluno {
   width: 341.51px;
-  height: 276.27px;
+  min-height: 276.27px; /* Aumentado um pouco para caber o conteúdo */
   background: #ffffff;
   border-radius: 12px;
   position: relative;
   box-sizing: border-box;
+  padding: 20px; /* Adiciona padding para o conteúdo não tocar as bordas */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
     border 0.3s ease-in-out;
   cursor: pointer;
   border: 1px solid transparent;
+
+  /* FUNDAMENTAL: Organizar o conteúdo interno em coluna */
+  display: flex;
+  flex-direction: column;
 }
 
 .card-aluno:hover {
@@ -58,80 +68,87 @@ body {
 }
 
 .card-inner-content {
-  position: absolute;
+  /* Removido position: absolute */
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 1. LAYOUT AVATAR + NOME/EMAIL */
+.top-info {
+  display: flex;
+  align-items: center; /* Alinha avatar e texto no centro */
+  margin-bottom: 20px;
+  padding-top: 10px;
 }
 
 .ellipse-11 {
-  position: absolute;
   width: 65.05px;
   height: 68.27px;
-  left: 32.52px;
-  top: 40.53px;
   background: #d9d9d9;
   border-radius: 50%;
+  margin-right: 15px; /* Espaço entre avatar e texto */
+  flex-shrink: 0;
 }
 
+.text-info {
+  /* Faz Nome e Email ficarem um abaixo do outro */
+  display: flex;
+  flex-direction: column;
+}
 .nome-aluno {
-  position: absolute;
-  width: 128.07px;
-  height: 49.07px;
-  left: 106.72px;
-  top: 54.4px;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
   margin: 0;
+  font-weight: 700;
 }
-
-.nome-aluno.nome-poppins {
-  font-family: "Poppins", sans-serif;
-  line-height: 30px;
-}
-
 .email-aluno {
-  position: absolute;
-  width: 111.8px;
-  height: 40.53px;
-  left: 106.72px;
-  top: 84.27px;
   font-family: "Inter", sans-serif;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 14px;
+  line-height: 16px;
   color: #000000;
   margin: 0;
+  margin-top: 2px;
 }
 
-.email-aluno.email-alt {
-  height: 12px;
+/* 2. LAYOUT DO PLANO */
+.plano-info-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
 }
-
+.plano-label {
+  font-weight: 700;
+  margin: 0;
+}
 .plano-aluno {
-  position: absolute;
-  width: 128.07px;
-  height: 55.47px;
-  left: 42.69px;
-  top: 147.2px;
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  color: #000000;
+  color: #8a2be2;
+  font-weight: 400;
   margin: 0;
 }
 
-.plano-aluno.plano-poppins {
-  font-family: "Poppins", sans-serif;
-  line-height: 30px;
+/* 3. BOTÕES (MOVIDOS PARA O RODAPÉ DO CARD) */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto; /* Empurra os botões para baixo */
 }
 
 .perfil-button,
 .treino-button {
-  position: absolute;
-  width: 128.07px;
-  height: 55.47px;
+  width: 100%;
+  text-align: left; /* Mantido o alinhamento da fonte original */
+  padding: 5px 0;
+  margin-top: 5px;
 
+  /* Mantido o estilo original de texto */
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 24px;
@@ -139,21 +156,7 @@ body {
 
   background: none;
   border: none;
-  padding: 0;
-  text-align: left;
   cursor: pointer;
+  text-decoration: none;
   white-space: nowrap;
-}
-
-.perfil-button {
-  left: 43px;
-  top: 187px;
-}
-.perfil-button.perfil-alt {
-  top: 186px;
-}
-
-.treino-button {
-  left: 43px;
-  top: 227px;
 }
