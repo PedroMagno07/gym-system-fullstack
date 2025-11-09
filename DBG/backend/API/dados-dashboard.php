@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-require '../conexao.php'; 
+require 'conexao.php'; 
 
 $response = [
     'planos' => [],
