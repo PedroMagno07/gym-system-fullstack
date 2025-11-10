@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Mudança de Treino</title>
+    
+    <link rel="stylesheet" href="solicit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="banner-titulo">
+      <h2>SOLICITAÇÃO DE MUDANÇA NO TREINO</h2>
+    </div>
+
+    <main class="solicitacao-container">
+
+        <section class="instrucoes-card">
+            <h3>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                IMPORTANTE!
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </h3>
+            
+            <p>Esse campo deve ser obrigatoriamente preenchido</p>
+            
+            <ul>
+                <li>
+                    <i class="fa-solid fa-pencil"></i>
+                    <span>Coloque no formulário as alterações desejadas.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Responda de forma Objetiva.</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Aguarde a análise do professor.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="form-container">
+            <h3>Sua solicitação</h3>
+            <hr>
+            
+            <form id="form-solicitacao">
+                <textarea 
+                    id="texto-solicitacao" 
+                    class="form-textarea" 
+                    placeholder="Escreva detalhadamente suas alterações aqui..."
+                ></textarea>
+                
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <div class="footer-actions">
+        <a href="../DBG/frontend/Rotina Treino/rotina.html" class="btn-voltar">Voltar</a>
+    </div>
+
+    <script src="solicit.js"></script>
+</body>
+</html>
