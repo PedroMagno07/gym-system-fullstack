@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
-
   const usuarioIdParaCarregar = urlParams.get("id") || 1;
 
-  // Elementos de carregamento/erro comuns
   const nomeElement = document.getElementById("nome_usuario");
-  nomeElement.textContent = "Carregando...";
+  if (nomeElement) nomeElement.textContent = "Carregando...";
 
   const fetchUrl = `../../../backend/professor/fetch_perfil.php?id=${usuarioIdParaCarregar}`;
 
@@ -14,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!response.ok) {
         return response.text().then((text) => {
           throw new Error(
-            `Erro HTTP ${response.status}: ${text || "Resposta vazia."}`
+            `Erro HTTP ${response.status}: Falha ao buscar perfil.`
           );
         });
       }
@@ -23,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       if (data.success && data.data) {
         const perfil = data.data;
-        const tipoUsuario = data.tipo_usuario;
 
-        nomeElement.textContent = perfil.nome;
+        if (nomeElement) nomeElement.textContent = perfil.nome;
         document.getElementById("gmail_usuario").textContent = perfil.gmail;
         document.getElementById("telefone_usuario").textContent =
           perfil.telefone;
@@ -33,20 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("data_criacao_usuario").textContent =
           perfil.data_criacao;
 
-        if (tipoUsuario === "aluno") {
-          document.getElementById("plano_aluno").textContent =
-            perfil.plano.toUpperCase();
-        } else if (tipoUsuario === "professor") {
+        if (perfil.tipo_usuario === "professor") {
           document.getElementById("cref_professor").textContent = perfil.cref;
           document.getElementById("data_contratacao_professor").textContent =
             perfil.data_contratacao;
-        } else {
-          console.warn(
-            `Tipo de usuário '${tipoUsuario}' carregado com sucesso, mas sem renderização específica.`
-          );
         }
       } else {
+        if (nomeElement) nomeElement.textContent = `Erro: ${data.message}`;
       }
     })
-    .catch((error) => {});
+    .catch((error) => {
+      console.error("Erro na requisição (Final):", error);
+      if (nomeElement) nomeElement.textContent = `Falha na comunicação.`;
+    });
 });
