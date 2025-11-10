@@ -23,22 +23,17 @@ try {
         exit();
     }
 
-    $sql = "";
-    $select_extra = ""; 
+    $select_extra = "";
+    $join = "";
+
     if ($tipo_usuario === 'aluno') {
-        $select_extra = ", P.nome AS plano, A.data_matricula";
+        $select_extra = ", P.nome AS plano";
         $join = "JOIN Alunos A ON U.usuario_id = A.aluno_id JOIN Planos P ON A.plano_id = P.plano_id";
     } elseif ($tipo_usuario === 'professor') {
-        $select_extra = ", T.cref, T.data_contratacao"; 
+        $select_extra = ", T.cref, DATE_FORMAT(T.data_contratacao, '%d/%m/%Y') AS data_contratacao";
         $join = "JOIN Professores T ON U.usuario_id = T.professor_id";
-    } elseif ($tipo_usuario === 'admin') {
-        $select_extra = ", D.nivel_acesso"; 
-        $join = "JOIN Admins D ON U.usuario_id = D.admin_id";
-    } else {
-        http_response_code(400);
-        echo json_encode(["success" => false, "message" => "Tipo de usuário não suportado."]);
-        exit();
     }
+
     $sql = "
         SELECT 
             U.nome, 
@@ -68,6 +63,6 @@ try {
 
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(["success" => false, "message" => "Erro interno no servidor ao buscar perfil: " . $e->getMessage()]);
+    echo json_encode(["success" => false, "message" => "Erro interno no servidor ao buscar perfil."]);
 }
 ?>
