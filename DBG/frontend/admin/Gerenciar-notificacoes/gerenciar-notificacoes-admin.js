@@ -1,94 +1,70 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formNotificacao");
+const API_BASE = "http://localhost/DBG1/backend/admin";
+
+async function listarNotificacoes() {
   const lista = document.getElementById("listaNotificacoes");
+  lista.innerHTML = "";
 
-  // === Função para carregar as notificações ===
-  async function carregarNotificacoes() {
-    lista.innerHTML = "<p style='text-align:center;'>Carregando...</p>";
+  try {
+    const response = await fetch(`${API_BASE}/listar_notificacoes.php`);
+    if (!response.ok) throw new Error("Erro ao buscar notificações");
 
-    try {
-      const resp = await fetch("http://localhost/DBG/backend/admin/listar_notificacoes.php");
-      const dados = await resp.json();
-
-      if (!dados.length) {
-        lista.innerHTML = "<p style='text-align:center;'>Nenhuma notificação encontrada.</p>";
-        return;
-      }
-
-      lista.innerHTML = "";
-
-      dados.forEach(n => {
-        const item = document.createElement("div");
-        item.classList.add("notificacao");
-        item.innerHTML = `
-          <p>${n.titulo}</p>
-          <p>${new Date(n.data_envio).toLocaleDateString("pt-BR")}</p>
-          <p>${n.destinatarios}</p>
-          <button class="excluir" data-id="${n.notificacao_id}">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        `;
-        lista.appendChild(item);
-      });
-
-      // === Lidar com exclusões ===
-      document.querySelectorAll(".excluir").forEach(btn => {
-        btn.addEventListener("click", async () => {
-          const id = btn.dataset.id;
-          if (!confirm("Deseja excluir esta notificação?")) return;
-
-          const resp = await fetch("http://localhost/DBG/backend/admin/excluir_notificacoes.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id })
-          });
-
-          const result = await resp.json();
-          if (resp.ok) {
-            alert(result.mensagem || "Excluída com sucesso!");
-            carregarNotificacoes();
-          } else {
-            alert(result.erro || "Erro ao excluir.");
-          }
-        });
-      });
-    } catch (err) {
-      lista.innerHTML = "<p style='text-align:center;color:red;'>Erro ao carregar notificações.</p>";
-      console.error(err);
-    }
-  }
-
-  // === Envio do formulário ===
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-
-    const dados = {
-      titulo: document.getElementById("titulo").value.trim(),
-      destinatarios: document.getElementById("destinatarios").value.trim(),
-      conteudo: document.getElementById("conteudo").value.trim()
-    };
-
-    if (!dados.titulo || !dados.destinatarios || !dados.conteudo) {
-      alert("Preencha todos os campos!");
+    const notificacoes = await response.json();
+    if (!notificacoes.length) {
+      lista.innerHTML = `<p style="color:red;">Nenhuma notificação encontrada.</p>`;
       return;
     }
 
-    const resp = await fetch("http://localhost/DBG/backend/admin/criar_notificacao.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dados)
-    });
+    notificacoes.forEach(n => {
+      const item = document.createElement("div");
+      item.classList.add("notificacao-item");
 
-    const result = await resp.json();
-    if (resp.ok) {
-      alert(result.mensagem || "Notificação criada!");
-      form.reset();
-      carregarNotificacoes();
-    } else {
-      alert(result.erro || "Erro ao criar notificação.");
-    }
+      item.innerHTML = `
+        <p>${n.titulo}<br><small>${n.data_envio}</small></p>
+        <p>${n.data_envio}</p>
+        <p>${n.destinatarios}</p>
+        <button class="excluir" data-id="${n.notificacao_id}">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      `;
+
+      item.querySelector(".excluir").addEventListener("click", async () => {
+        if (!confirm("Deseja realmente excluir esta notificação?")) return;
+        await fetch(`${API_BASE}/excluir_notificacao.php?id=${n.notificacao_id}`, { method: "DELETE" });
+        listarNotificacoes();
+      });
+
+      lista.appendChild(item);
+    });
+  } catch (error) {
+    lista.innerHTML = `<p style="color:red;">Erro ao carregar notificações.</p>`;
+  }
+}
+
+async function criarNotificacao() {
+  const titulo = document.getElementById("titulo").value;
+  const destinatarios = document.getElementById("destinatarios").value;
+  const conteudo = document.getElementById("conteudo").value;
+
+  const payload = { titulo, destinatarios, conteudo };
+  const resp = await fetch(`${API_BASE}/criar_notificacao.php`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
   });
 
-  // === Carregar tudo ao abrir ===
-  carregarNotificacoes();
+  if (resp.ok) {
+    alert("Notificação criada!");
+    listarNotificacoes();
+    document.getElementById("formNotificacao").reset();
+  } else {
+    alert("Erro ao criar notificação.");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  listarNotificacoes();
+  document.getElementById("formNotificacao").addEventListener("submit", e => {
+    e.preventDefault();
+    criarNotificacao();
+  });
 });
