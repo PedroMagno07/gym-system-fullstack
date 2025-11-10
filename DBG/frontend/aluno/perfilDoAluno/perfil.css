@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #121212; /* Fundo escuro como na imagem original */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #fff;
+  width: 100%;
+  max-width: 450px;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Cabeçalho Roxo --- */
+.header {
+  background-color: #8a2be2; /* Cor roxa aproximada */
+  height: 140px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.back-arrow {
+  color: white;
+  font-size: 24px;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.logo span {
+  color: #000; /* A parte {Fit} parece preta na imagem */
+}
+
+/* --- Corpo do Card --- */
+.body {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+/* --- Barra Lateral Cinza (Forma Geométrica) --- */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sidebar-shape {
+  background-color: #e0e0e0;
+  width: 45%;
+  height: 100%;
+  clip-path: polygon(0 0, 65% 0, 100% 60%, 0% 100%);
+}
+
+.sidebar-text {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: rotate(-90deg) translate(-50%, -50%);
+  transform-origin: 0 0;
+  font-size: 36px;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+/* --- Avatar do Usuário (com imagem) --- */
+.avatar-container {
+  position: absolute;
+  top: -70px;
+  left: 30px;
+  z-index: 10;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #000; /* Borda preta como na imagem original */
+  overflow: hidden; /* Garante que a imagem seja cortada no formato do círculo */
+  display: flex; /* Para centralizar a imagem se necessário */
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir o círculo sem distorcer */
+  object-position: center; /* Centraliza a imagem */
+}
+
+/* --- Área de Conteúdo Principal --- */
+.main-content {
+  flex: 1;
+  padding: 80px 20px 20px 160px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.info-label {
+  font-size: 16px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+}
