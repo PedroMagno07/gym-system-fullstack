@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-
+// CORREÇÃO: db.php está um nível acima
 require '../db.php'; 
 
 $response = [

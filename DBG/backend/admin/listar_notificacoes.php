@@ -1,24 +1,22 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+header('Content-Type: application/json; charset=utf-8');
+require __DIR__ . '/../db.php';
 
-include 'db.php';
+
 
 try {
-    $stmt = $pdo->query("
-        SELECT 
+  $sql = "SELECT 
             notificacao_id,
             titulo,
             conteudo,
             destinatarios,
             data_envio
-        FROM notificacoes
-        ORDER BY data_envio DESC
-    ");
-
-    $notificacoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($notificacoes);
-} catch (PDOException $e) {
-    echo json_encode(["erro" => $e->getMessage()]);
+          FROM Notificacoes
+          ORDER BY data_envio DESC
+          LIMIT 100";
+  $stmt = $pdo->query($sql);
+  echo json_encode($stmt->fetchAll());
+} catch (Throwable $e) {
+  http_response_code(500);
+  echo json_encode(['erro' => 'Erro ao listar notificações: ' . $e->getMessage()]);
 }
-?>
