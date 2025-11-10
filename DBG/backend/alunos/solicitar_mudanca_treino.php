@@ -15,7 +15,6 @@ if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'aluno') 
     exit;
 }
 
-// 4. OBTER DADOS
 $aluno_id = $_SESSION['usuario_id']; 
 $nome_aluno = $_SESSION['nome_usuario'] ?? 'Aluno'; 
 $data = json_input();
