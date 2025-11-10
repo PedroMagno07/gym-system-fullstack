@@ -1,46 +1,45 @@
 const ctx = document.getElementById('dashboardChart').getContext('2d');
 let currentChart;
 
-// Configurações globais do Chart.js para manter o estilo visual
+
 Chart.defaults.color = '#333';
 Chart.defaults.font.family = "'Segoe UI', sans-serif";
 Chart.defaults.font.weight = 'bold';
 
-// Variável para armazenar os dados vindos do servidor PHP
+
 let serverData = null;
 
-// --- 1. FUNÇÃO PARA BUSCAR DADOS DO BACKEND ---
 async function fetchData() {
     try {
-        // CORREÇÃO: O caminho aponta para a pasta 'admin' do backend, não 'API'
+      
         const response = await fetch('../../../backend/admin/dados-dashboard.php');
         if (!response.ok) throw new Error('Erro na resposta da rede');
         
         serverData = await response.json();
         
-        // Após carregar os dados com sucesso, renderiza o primeiro gráfico
+     
         renderChart('planos');
         
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
-        // Fallback opcional: mostrar dados vazios ou mensagem de erro na tela
+        
         alert('Não foi possível carregar os dados atualizados.');
     }
 }
 
-// --- 2. FUNÇÃO DE RENDERIZAÇÃO DO GRÁFICO ---
+
 function renderChart(type) {
-    // Se os dados ainda não chegaram, não faz nada
+
     if (!serverData) return;
 
-    // Destrói o gráfico anterior se existir para criar um novo
+
     if (currentChart) {
         currentChart.destroy();
     }
 
-    // Define as configurações de dados com base no tipo selecionado
+
     let chartDataConfig;
-    let yAxisConfig = {}; // Configuração dinâmica dos eixos Y
+    let yAxisConfig = {}; 
 
     switch(type) {
         case 'planos':
@@ -70,7 +69,7 @@ function renderChart(type) {
                     }
                 ]
             };
-            // Configura eixo Y secundário para porcentagem
+
             yAxisConfig.y1 = {
                 beginAtZero: true,
                 position: 'right',
@@ -129,26 +128,25 @@ function renderChart(type) {
                     yAxisID: 'y'
                 }]
             };
-            // Receita não precisa de eixo Y secundário (y1)
+
             break;
     }
 
-    // Configuração do eixo Y principal (comum a todos)
+
     yAxisConfig.y = {
         beginAtZero: true,
         grid: { color: '#ccc', lineWidth: 1 },
         ticks: { font: { weight: 'bold' } }
     };
 
-    // Cria o novo gráfico com as configurações definidas
     currentChart = new Chart(ctx, {
-        type: 'bar', // Tipo base padrão
+        type: 'bar', 
         data: chartDataConfig,
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false }, // Esconde a legenda para visual mais limpo
+                legend: { display: false }, 
                 tooltip: {
                     backgroundColor: '#000',
                     titleFont: { size: 14 },
@@ -161,9 +159,9 @@ function renderChart(type) {
                             if (label) label += ': ';
                             if (context.parsed.y !== null) {
                                 label += context.parsed.y;
-                                // Adiciona '%' se for o dataset de porcentagem
+                                
                                 if (context.dataset.yAxisID === 'y1') label += '%';
-                                // Adiciona 'R$' se for receita
+                                
                                 if (type === 'receita') label = 'R$ ' + context.parsed.y.toFixed(2);
                             }
                             return label;
@@ -176,25 +174,23 @@ function renderChart(type) {
                     grid: { display: false, drawBorder: true, color: '#000', lineWidth: 2 },
                     ticks: { font: { weight: '900' }, color: '#000' }
                 },
-                ...yAxisConfig // Espalha as configurações dos eixos Y definidos acima
+                ...yAxisConfig 
             }
         }
     });
 }
 
-// --- 3. GERENCIAMENTO DOS BOTÕES DE ALTERNÂNCIA ---
 const tabButtons = document.querySelectorAll('.tab-btn');
 
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove classe 'active' de todos os botões
+     
         tabButtons.forEach(btn => btn.classList.remove('active'));
-        // Adiciona 'active' apenas ao botão clicado
+  
         button.classList.add('active');
-        // Renderiza o gráfico correspondente
+
         renderChart(button.dataset.type);
     });
 });
 
-// Inicializa a aplicação buscando os dados
 fetchData();

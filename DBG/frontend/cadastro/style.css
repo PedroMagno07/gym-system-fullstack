@@ -25,7 +25,7 @@
 
         .login-container {
             width: 100%;
-            max-width: 600px; /* Levemente maior para acomodar chaves maiores se necessário */
+            max-width: 600px; 
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -38,7 +38,7 @@
 
         .logo {
             max-width: 300px;
-            margin-bottom: 30px; /* Reduzi um pouco a margem para caber tudo na tela sem rolar */
+            margin-bottom: 30px; 
         }
 
         .braced-inputs-wrapper {
@@ -50,12 +50,12 @@
         }
 
         .brace {
-            /* AUMENTADO: Para cobrir os 3 inputs */
+     
             font-size: 260px; 
             color: var(--cor-roxo-marca);
             font-weight: 300;
             line-height: 0;
-            margin-top: -15px; /* Ajuste fino vertical para centralizar com 3 inputs */
+            margin-top: -15px; 
             user-select: none;
             flex-shrink: 0;
         }

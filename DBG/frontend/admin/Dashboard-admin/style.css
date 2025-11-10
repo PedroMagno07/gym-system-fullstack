@@ -20,7 +20,7 @@ body {
     flex-direction: column;
 }
 
-/* --- Header --- */
+
 .header {
     background-color: #000;
     height: 60px;
@@ -30,20 +30,20 @@ body {
 }
 
 .logo-img {
-    max-height: 40px; /* Ajuste conforme sua logo */
+    max-height: 40px; 
     width: auto;
 }
 
-/* --- Layout --- */
+
 .main-container {
     flex: 1;
     display: flex;
     padding: 30px;
     gap: 30px;
-    height: calc(100vh - 60px); /* Altura total menos o header */
+    height: calc(100vh - 60px); 
 }
 
-/* --- Sidebar --- */
+
 .sidebar {
     background-color: var(--bg-container);
     width: 260px;
@@ -73,7 +73,7 @@ body {
     margin-bottom: 15px;
     background-color: #fff;
     border: none;
-    border-radius: 50px; /* Bordas bem arredondadas */
+    border-radius: 50px; 
     font-size: 1.1rem;
     font-weight: bold;
     display: flex;
@@ -109,10 +109,10 @@ body {
     align-items: center;
     font-size: 30px;
     margin-bottom: 10px;
-    transform: rotate(180deg); /* Para a seta apontar para a esquerda se usar caractere padrão */
+    transform: rotate(180deg); 
 }
 
-/* --- Content Area --- */
+
 .content {
     flex: 1;
     background-color: var(--bg-container);
@@ -134,7 +134,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* --- Toggle Tabs --- */
+
 .toggle-tabs {
     display: flex;
     justify-content: center;
