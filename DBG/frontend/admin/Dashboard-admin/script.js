@@ -12,7 +12,8 @@ let serverData = null;
 // --- 1. FUNÇÃO PARA BUSCAR DADOS DO BACKEND ---
 async function fetchData() {
     try {
-        const response = await fetch('../../../backend/API/dados-dashboard.php');
+        // CORREÇÃO: O caminho aponta para a pasta 'admin' do backend, não 'API'
+        const response = await fetch('../../../backend/admin/dados-dashboard.php');
         if (!response.ok) throw new Error('Erro na resposta da rede');
         
         serverData = await response.json();
