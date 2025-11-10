@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
+  const alunoIdParaCarregar = urlParams.get("id") || 1;
 
-  const usuarioIdParaCarregar = urlParams.get("id") || 1;
+  const planoElement = document.getElementById("plano_aluno");
+  const nomeElement = document.getElementById("nome_aluno");
 
-  const nomeElement = document.getElementById("nome_usuario");
   nomeElement.textContent = "Carregando...";
+  planoElement.textContent = "Carregando...";
 
-  const fetchUrl = `../../../backend/fetch_perfil.php?id=${usuarioIdParaCarregar}`;
+  const fetchUrl = `../../../backend/professor/fetch_perfilAluno.php?id=${alunoIdParaCarregar}`;
 
   fetch(fetchUrl)
     .then((response) => {
@@ -22,30 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       if (data.success && data.data) {
         const perfil = data.data;
-        const tipoUsuario = data.tipo_usuario;
 
         nomeElement.textContent = perfil.nome;
-        document.getElementById("gmail_usuario").textContent = perfil.gmail;
-        document.getElementById("telefone_usuario").textContent =
-          perfil.telefone;
-        document.getElementById("cpf_usuario").textContent = perfil.cpf;
-        document.getElementById("data_criacao_usuario").textContent =
+        document.getElementById("gmail_aluno").textContent = perfil.gmail;
+        document.getElementById("telefone_aluno").textContent = perfil.telefone;
+        document.getElementById("cpf_aluno").textContent = perfil.cpf;
+        document.getElementById("data_criacao_aluno").textContent =
           perfil.data_criacao;
 
-        if (tipoUsuario === "aluno") {
-          document.getElementById("plano_aluno").textContent =
-            perfil.plano.toUpperCase();
-        } else if (tipoUsuario === "professor") {
-          document.getElementById("cref_professor").textContent = perfil.cref;
-          document.getElementById("data_contratacao_professor").textContent =
-            perfil.data_contratacao;
-        } else {
-          console.warn(
-            `Tipo de usuário '${tipoUsuario}' carregado com sucesso, mas sem renderização específica.`
-          );
-        }
+        planoElement.textContent = perfil.plano.toUpperCase();
       } else {
+        console.error("Erro do servidor (Lógica):", data.message);
+        nomeElement.textContent = `Erro: ${data.message}`;
       }
     })
-    .catch((error) => {});
+    .catch((error) => {
+      console.error("Erro na requisição (Final):", error);
+      nomeElement.textContent = `Falha na comunicação: ${error.message}`;
+      planoElement.textContent = "ERRO";
+    });
 });
