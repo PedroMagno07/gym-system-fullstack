@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: ../../frontend/admin/Dashboard-admin/index.html");
         } elseif ($usuario_db['tipo_usuario'] === 'professor') {
             // CORREÇÃO: Caminho do professor
-            header("Location: ../../frontend/professor/index.html");
+            header("Location: ../../frontend/professor/Dashboard-professor/index.html");
         } else {
             // É ALUNO.
             if (empty($usuario_db['plano_id'])) {
