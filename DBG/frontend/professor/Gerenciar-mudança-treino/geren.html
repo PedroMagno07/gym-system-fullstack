@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Solicitações</title>
+    
+    <link rel="stylesheet" href="geren.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+    <div class="banner-titulo">
+      <h2>GERENCIAR SOLICITAÇÕES DE TREINO</h2>
+    </div>
+
+    <main class="gerenciar-container">
+
+        <aside class="lista-solicitacoes">
+            <div class="lista-header">
+                <h3>SOLICITAÇÕES PENDENTES</h3>
+            </div>
+            
+            <ul class="lista-alunos">
+                <li class="item-titulo">
+                    <i class="fa-solid fa-pencil"></i>
+                    <span>Solicitações</span>
+                </li>
+                
+                <li class="solicitacao-item active" data-aluno="wagner">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Wagner Moura</span>
+                </li>
+
+                <li class="solicitacao-item" data-aluno="lebron">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Lebron James</span>
+                </li>
+                
+                <li class="solicitacao-item" data-aluno="thiago">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Thiago Veigh</span>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="detalhe-solicitacao">
+            
+            <div id="detalhes-wagner">
+                <h1>Wagner Moura</h1>
+            
+                <div class="mensagem-aluno">
+                    <p>Gostaria de mudar o foco do meu treino para um déficit calórico e focar mais na parte superior ...</p>
+                </div>
+                
+                <div class="botoes-professor">
+                    <button class="btn-acao btn-ver-treino">
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Ver/editar Treino
+                    </button>
+                    <button id="btn-abrir-modal-resposta" class="btn-acao btn-responder">
+                        <i class="fa-solid fa-reply"></i>
+                        Responder Solicitação
+                    </button>
+                    <button class="btn-acao btn-recusar">
+                        <i class="fa-solid fa-ban"></i>
+                        Recusar Solicitação
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="footer-actions">
+        <a href="#" class="btn-voltar">Voltar</a>
+    </div>
+
+    <div id="modal-resposta" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modal-titulo">Responder para ...</h3>
+            
+            <textarea id="texto-resposta" class="modal-textarea" placeholder="Escreva sua resposta..."></textarea>
+            
+            <div class="modal-botoes">
+                <button id="btn-cancelar-resposta" class="btn-acao-modal btn-cancelar">Cancelar</button>
+                <button id="btn-enviar-resposta" class="btn-acao-modal btn-enviar">Enviar Resposta</button>
+            </div>
+        </div>
+    </div>
+    <script src="geren.js"></script>
+</body>
+</html>

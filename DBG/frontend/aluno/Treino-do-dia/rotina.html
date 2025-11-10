@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino do dia</title>
+    <link rel="stylesheet" href="rotina.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+    <div class="banner-titulo">
+      <h2>ROTINA DA SEMANA</h2>
+    </div>
+
+    <main class="rotina-container">
+      
+      <section class="treino-semana">
+        <nav class="treino-tabs">
+          <ul>
+            <li class="tab-active" data-day="segunda">SEGUNDA</li>
+            <li data-day="terca">TERÇA</li>
+            <li data-day="quarta">QUARTA</li>
+            <li data-day="quinta">QUINTA</li>
+            <li data-day="sexta">SEXTA</li>
+          </ul>
+        </nav>
+
+        <div class="treino-conteudo">
+          
+          <div id="segunda" class="treino-dia tab-content-active">
+            <div class="exercicio-item">
+              <input type="checkbox" id="seg-ex1" class="exercicio-check">
+              <label for="seg-ex1" class="exercicio-info">
+                <h4>SUPINO RETO</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="seg-ex2" class="exercicio-check">
+              <label for="seg-ex2" class="exercicio-info">
+                <h4>SUPINO INCLINADO</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="seg-ex3" class="exercicio-check">
+              <label for="seg-ex3" class="exercicio-info">
+                <h4>CRUCIFIXO INCLINADO</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="seg-ex4" class="exercicio-check">
+              <label for="seg-ex4" class="exercicio-info">
+                <h4>CROSSOVER</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+          </div>
+
+          <div id="terca" class="treino-dia">
+            <div class="exercicio-item">
+              <input type="checkbox" id="ter-ex1" class="exercicio-check">
+              <label for="ter-ex1" class="exercicio-info">
+                <h4>AGACHAMENTO LIVRE</h4>
+                <p>4 SÉRIES DE 12 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="ter-ex2" class="exercicio-check">
+              <label for="ter-ex2" class="exercicio-info">
+                <h4>LEG PRESS 45°</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="ter-ex3" class="exercicio-check">
+              <label for="ter-ex3" class="exercicio-info">
+                <h4>CADEIRA EXTENSORA</h4>
+                <p>4 SÉRIES DE 15 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="ter-ex4" class="exercicio-check">
+              <label for="ter-ex4" class="exercicio-info">
+                <h4>PANTURRILHA EM PÉ</h4>
+                <p>5 SÉRIES DE 20 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+          </div>
+          
+          <div id="quarta" class="treino-dia">
+             <div class="exercicio-item">
+              <input type="checkbox" id="qua-ex1" class="exercicio-check">
+              <label for="qua-ex1" class="exercicio-info">
+                <h4>BARRA FIXA (ou Puxador Frontal)</h4>
+                <p>4 SÉRIES ATÉ A FALHA</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="qua-ex2" class="exercicio-check">
+              <label for="qua-ex2" class="exercicio-info">
+                <h4>REMADA CURVADA</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+          </div>
+          
+          <div id="quinta" class="treino-dia">
+             <div class="exercicio-item">
+              <input type="checkbox" id="qui-ex1" class="exercicio-check">
+              <label for="qui-ex1" class="exercicio-info">
+                <h4>DESENVOLVIMENTO C/ HALTERES</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="qui-ex2" class="exercicio-check">
+              <label for="qui-ex2" class="exercicio-info">
+                <h4>ELEVAÇÃO LATERAL</h4>
+                <p>5 SÉRIES DE 15 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+          </div>
+
+          <div id="sexta" class="treino-dia">
+            <div class="exercicio-item">
+              <input type="checkbox" id="sex-ex1" class="exercicio-check">
+              <label for="sex-ex1" class="exercicio-info">
+                <h4>ROSCA DIRETA BARRA W</h4>
+                <p>4 SÉRIES DE 10 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+            <div class="exercicio-item">
+              <input type="checkbox" id="sex-ex2" class="exercicio-check">
+              <label for="sex-ex2" class="exercicio-info">
+                <h4>TRÍCEPS CORDA</h4>
+                <p>4 SÉRIES DE 12 REPETIÇÕES</p>
+              </label>
+              <span class="exercicio-descanso">DESCANSO 60seg</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="progresso-lateral">
+        
+        <div class="progresso-bloco">
+          <h3>PROGRESSO</h3>
+          <div class="progresso-item">
+            <label for="prog-diario">DIÁRIO</label>
+            <div class="progresso-barra-fundo">
+              <div id="progresso-diario-barra" class="progresso-barra-cor" style="width: 0%;"></div>
+            </div>
+            <span id="progresso-diario-texto">0%</span>
+          </div>
+          <div class="progresso-item">
+            <label for="prog-semanal">SEMANAL</label>
+            <div class="progresso-barra-fundo">
+              <div id="progresso-semanal-barra" class="progresso-barra-cor" style="width: 0%;"></div>
+            </div>
+            <span id="progresso-semanal-texto">0%</span>
+          </div>
+        </div>
+
+        <div class="notas-bloco">
+          <h3>NOTAS</h3>
+          <textarea id="notas-input" class="notas-textarea" placeholder="Anote a carga, dificuldades, etc..."></textarea>
+        </div>
+
+        <div class="botoes-acao">
+          <button id="btn-finalizar" class="btn-finalizar">FINALIZAR TREINO</button>
+        <a href="../../../SolicitarMudança/solicit.html" class="btn-solicitar">
+        <i class="fa-solid fa-file-pen"></i> SOLICITAR ALTERAÇÃO
+        </a>
+        </div>
+
+      </aside>
+    </main>
+
+    <script src="rotina.js"></script>
+</body>
+</html>
