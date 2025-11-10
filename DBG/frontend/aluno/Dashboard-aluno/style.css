@@ -1,4 +1,4 @@
-/* --- VARIÁVEIS GERAIS --- */
+
 :root {
     --color-purple: #8F17BE;
     --color-black: #0E1111;
@@ -8,11 +8,11 @@
     --nav-height: 97px;
 }
 
-/* --- RESET E ESTILOS GERAIS --- */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Mantendo a fonte Poppins pedida */
+    font-family: 'Poppins', sans-serif; 
     overflow-x: hidden;
     background-color: #1a1a1a;
 }
@@ -20,9 +20,7 @@ body {
 a { color: #fff; text-decoration: none; transition: 0.3s; }
 a:hover { opacity: 0.7; }
 
-/* =========================================
-   NAVBAR ORIGINAL RESTAURADA
-   ========================================= */
+
 nav {
     position: fixed; width: 100%; height: var(--nav-height);
     background: #0e1111;
@@ -54,9 +52,7 @@ nav {
 .mobile-menu.active .line2 { opacity: 0; }
 .mobile-menu.active .line3 { transform: rotate(45deg) translate(-5px, -7px); }
 
-/* =========================================
-   ESTILOS DA PÁGINA DE NOTIFICAÇÕES
-   ========================================= */
+
 .background-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
     background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop');

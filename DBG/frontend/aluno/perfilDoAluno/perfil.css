@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #121212; /* Fundo escuro como na imagem original */
+  background-color: #121212; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,9 +27,9 @@ body {
   flex-direction: column;
 }
 
-/* --- Cabeçalho Roxo --- */
+
 .header {
-  background-color: #8a2be2; /* Cor roxa aproximada */
+  background-color: #8a2be2; 
   height: 140px;
   padding: 20px;
   display: flex;
@@ -54,17 +54,17 @@ body {
 }
 
 .logo span {
-  color: #000; /* A parte {Fit} parece preta na imagem */
+  color: #000; 
 }
 
-/* --- Corpo do Card --- */
+
 .body {
   flex: 1;
   position: relative;
   display: flex;
 }
 
-/* --- Barra Lateral Cinza (Forma Geométrica) --- */
+
 .sidebar {
   position: absolute;
   top: 0;
@@ -94,7 +94,7 @@ body {
   letter-spacing: 2px;
 }
 
-/* --- Avatar do Usuário (com imagem) --- */
+
 .avatar-container {
   position: absolute;
   top: -70px;
@@ -106,9 +106,9 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 3px solid #000; /* Borda preta como na imagem original */
-  overflow: hidden; /* Garante que a imagem seja cortada no formato do círculo */
-  display: flex; /* Para centralizar a imagem se necessário */
+  border: 3px solid #000;
+  overflow: hidden; 
+  display: flex; 
   justify-content: center;
   align-items: center;
 }
@@ -116,11 +116,10 @@ body {
 .avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem cobrir o círculo sem distorcer */
-  object-position: center; /* Centraliza a imagem */
+  object-fit: cover; 
+  object-position: center; 
 }
 
-/* --- Área de Conteúdo Principal --- */
 .main-content {
   flex: 1;
   padding: 80px 20px 20px 160px;
