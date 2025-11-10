@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   nomeElement.textContent = "Carregando...";
   planoElement.textContent = "Carregando...";
 
-  const fetchUrl = `http://localhost/DBG/backend/professor/fetch_perfil.php?id=${alunoIdParaCarregar}`;
+  const fetchUrl = `../../../backend/professor/fetch_perfil.php?id=${alunoIdParaCarregar}`;
 
   fetch(fetchUrl)
     .then((response) => {

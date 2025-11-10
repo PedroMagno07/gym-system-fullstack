@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("alunos_container");
 
-  const fetchUrl = "http://localhost/DBG/backend/professor/fetch_alunos.php";
+  const fetchUrl = "../../../backend/professor/fetch_alunos.php";
   fetch(fetchUrl)
     .then((response) => {
       if (!response.ok) {
@@ -33,9 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             
             <div class="links-container">
-                <a href="../../aluno/perfilDoAluno/perfil.html?id=${
-                  aluno.usuario_id
-                }" class="perfil-button">PERFIL</a>
+               <a href="../perfilDoAluno/perfil.html?id=${
+                 aluno.usuario_id
+               }" class="perfil-button">PERFIL</a>
+
+
                 <a href="#" class="treino-button">TREINO</a>
             </div>
         </div>
