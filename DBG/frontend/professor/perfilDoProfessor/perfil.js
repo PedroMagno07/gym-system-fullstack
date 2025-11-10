@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const nomeElement = document.getElementById("nome_usuario");
   nomeElement.textContent = "Carregando...";
 
-  const fetchUrl = `../../../backend/professor/fetch_perfil.php?id=${usuarioIdParaCarregar}`;
+  const fetchUrl = `../../../backend/fetch_perfil.php?id=${usuarioIdParaCarregar}`;
 
   fetch(fetchUrl)
     .then((response) => {
       if (!response.ok) {
         return response.text().then((text) => {
-          throw new Error(
+          throw new Error(git 
             `Erro HTTP ${response.status}: ${text || "Resposta vazia."}`
           );
         });
