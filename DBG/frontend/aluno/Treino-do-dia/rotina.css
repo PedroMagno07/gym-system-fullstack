@@ -156,7 +156,7 @@ body {
   color: var(--cor-texto-fundo-escuro); 
 }
 
-.progresso-bloco h3, .notas-bloco h3 {
+.progresso-bloco h3 {
   margin: 0 0 20px 0;
   font-weight: 700;
   text-transform: uppercase;
@@ -179,18 +179,31 @@ body {
   text-align: right;
 }
 
-.progresso-barra-fundo {
-  flex-grow: 1;
+.progresso-item progress {
+  -webkit-appearance: none;
+  appearance: none;
+  flex-grow: 1; 
   height: 10px;
-  background-color: #555; 
+  border: none;
   border-radius: 5px;
   overflow: hidden;
 }
-.progresso-barra-cor {
-  height: 100%;
+
+.progresso-item progress::-webkit-progress-bar {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.progresso-item progress::-webkit-progress-value {
   background-color: var(--cor-principal);
   border-radius: 5px;
-  transition: width 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.progresso-item progress::-moz-progress-bar {
+  background-color: var(--cor-principal);
+  border-radius: 5px;
+  transition: all 0.5s ease;
 }
 
 .notas-bloco {
@@ -201,6 +214,14 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+
+.notas-label {
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block; 
+  color: var(--cor-texto-card); 
 }
 
 .notas-textarea {

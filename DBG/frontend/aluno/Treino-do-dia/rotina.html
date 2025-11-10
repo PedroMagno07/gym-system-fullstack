@@ -162,30 +162,26 @@
         <div class="progresso-bloco">
           <h3>PROGRESSO</h3>
           <div class="progresso-item">
-            <label for="prog-diario">DIÁRIO</label>
-            <div class="progresso-barra-fundo">
-              <div id="progresso-diario-barra" class="progresso-barra-cor" style="width: 0%;"></div>
-            </div>
+            <label for="prog-diario-barra">DIÁRIO</label>
+            <progress id="prog-diario-barra" max="100" value="0"></progress>
             <span id="progresso-diario-texto">0%</span>
           </div>
           <div class="progresso-item">
-            <label for="prog-semanal">SEMANAL</label>
-            <div class="progresso-barra-fundo">
-              <div id="progresso-semanal-barra" class="progresso-barra-cor" style="width: 0%;"></div>
-            </div>
+            <label for="prog-semanal-barra">SEMANAL</label>
+            <progress id="prog-semanal-barra" max="100" value="0"></progress>
             <span id="progresso-semanal-texto">0%</span>
           </div>
         </div>
 
         <div class="notas-bloco">
-          <h3>NOTAS</h3>
+          <label for="notas-input" class="notas-label">NOTAS</label>
           <textarea id="notas-input" class="notas-textarea" placeholder="Anote a carga, dificuldades, etc..."></textarea>
         </div>
 
         <div class="botoes-acao">
           <button id="btn-finalizar" class="btn-finalizar">FINALIZAR TREINO</button>
-        <a href="../../../SolicitarMudança/solicit.html" class="btn-solicitar">
-        <i class="fa-solid fa-file-pen"></i> SOLICITAR ALTERAÇÃO
+        <a href="../Solicitar-Mudança/solicit.html" class="btn-solicitar">
+          <i class="fa-solid fa-file-pen"></i> SOLICITAR ALTERAÇÃO
         </a>
         </div>
 
